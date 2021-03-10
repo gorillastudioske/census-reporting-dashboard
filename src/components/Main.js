@@ -71,7 +71,7 @@ export default class Main extends Component {
                     <MobileHeader counties={this.state.counties} />
                     <Breadcrumb />
                     <div className="row">
-                        <div className="col-md-8">
+                        <div className="col-md-8 indicators loaded">
                             <OverviewIndicator />
                             <GenderDistributionIndicator />
                             <CommunicationAccessIndicator />
