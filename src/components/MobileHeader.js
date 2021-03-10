@@ -11,7 +11,7 @@ export default function MobileHeader(props) {
                         </div>
                         <select className="custom-select">
                             <option value="default" disabled="disabled" defaultValue>Choose a county</option>
-                            {(props.counties.map(county => <option value={county.id}>{county.name}</option>))}
+                            {(props.counties.map(county => <option key={county.id} value={county.id}>{county.name}</option>))}
                         </select>
                     </div>
                 </div>
