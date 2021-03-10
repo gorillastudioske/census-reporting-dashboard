@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import Breadcrumb from './Breadcrumb'
 import MobileHeader from './MobileHeader'
+import OverviewIndicator from './Indicators/Overview'
+import GenderDistributionIndicator from './Indicators/GenderDistribution'
+import CommunicationAccessIndicator from './Indicators/CommunicationAccess'
+import EnergyAccessIndicator from './Indicators/EnergyAccess'
 import SidebarMap from './Sidebar/Map'
 
 
@@ -68,7 +72,10 @@ export default class Main extends Component {
                     <Breadcrumb />
                     <div className="row">
                         <div className="col-md-8">
-
+                            <OverviewIndicator />
+                            <GenderDistributionIndicator />
+                            <CommunicationAccessIndicator />
+                            <EnergyAccessIndicator />
                         </div>
 
                         <SidebarMap />
