@@ -1,0 +1,12 @@
+.footer-logo {
+    display:none
+   }
+   @media (min-width: 768px) {
+    .footer-logo {
+     display:block;
+     text-align:right
+    }
+    .footer-logo svg {
+     height:50px
+    }
+   }

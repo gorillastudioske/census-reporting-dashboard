@@ -1,0 +1,118 @@
+.energy-consumption {
+    padding:0 !important;
+    /* background:no-repeat center url("../img/Nairobi-City.jpg"); */
+    background-size:cover;
+    color:#fff
+   }
+   .energy-consumption .metrics {
+    padding-top:1rem;
+    padding-bottom:1rem;
+    background-color:rgba(23,162,184,0.75)
+   }
+   .energy-consumption .metric:first-child {
+    border-right:0;
+    border-bottom:1px dashed #fff;
+    padding-bottom:10px
+   }
+   .energy-consumption .metric:last-child {
+    padding-top:10px
+   }
+   .energy-consumption .symbol svg {
+    height:50px;
+    fill:#fff
+   }
+   .energy-consumption .description .title {
+    padding-top:10px;
+    padding-bottom:6px
+   }
+   .energy-consumption .description .title .separator {
+    visibility:hidden
+   }
+   .energy-consumption .description .title .active {
+    font-weight:700;
+    display:block
+   }
+   .energy-consumption .description .highlight {
+    font-size:4rem;
+    font-weight:700;
+    line-height:1
+   }
+   .energy-consumption .description .copy {
+    font-size:0.8rem;
+    padding-left:.2rem;
+    padding-right:.2rem
+   }
+   .energy-consumption .metric-links {
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap
+   }
+   .energy-consumption .metric-links li {
+    -webkit-box-flex:1;
+    -ms-flex:1 1 calc(25% - 4px);
+    flex:1 1 calc(25% - 4px);
+    margin:2px
+   }
+   .energy-consumption .metric-links a {
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:rgba(255,255,255,0.3);
+    border:1px solid #fff;
+    -webkit-transition:background-color 80ms ease-in-out;
+    transition:background-color 80ms ease-in-out
+   }
+   .energy-consumption .metric-links a svg {
+    fill:#fff;
+    height:18px;
+    -webkit-transition:fill 80ms ease-in-out;
+    transition:fill 80ms ease-in-out
+   }
+   .energy-consumption .metric-links a:hover,
+   .energy-consumption .metric-links a.active {
+    background-color:#fff
+   }
+   .energy-consumption .metric-links a:hover svg,
+   .energy-consumption .metric-links a.active svg {
+    fill:#17a2b8
+   }
+   @media (min-width: 576px) {
+    .energy-consumption .description .title .separator {
+     visibility:visible
+    }
+    .energy-consumption .description .title .active {
+     display:unset
+    }
+   }
+   @media (min-width: 768px) {
+    .energy-consumption .metrics {
+     padding-left:1rem;
+     padding-right:1rem
+    }
+    .energy-consumption .description .highlight {
+     font-size:4.5rem
+    }
+    .energy-consumption .description .copy {
+     font-size:0.84rem;
+     padding-left:.24rem;
+     padding-right:.24rem
+    }
+   }
+   @media (min-width: 992px) {
+    .energy-consumption .metrics {
+     padding:1rem .3rem
+    }
+    .energy-consumption .metric:first-child {
+     border-bottom:0;
+     border-right:1px dashed #fff;
+     padding-bottom:0
+    }
+    .energy-consumption .metric:last-child {
+     padding-top:0
+    }
+    .energy-consumption .description .highlight {
+     font-size:4.8rem
+    }
+    .energy-consumption .description .copy {
+     padding-left:.27rem;
+     padding-right:.27rem
+    }
+   }

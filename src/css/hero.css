@@ -1,0 +1,87 @@
+.counter-wrapper {
+    /* background:no-repeat center bottom/cover url(../img/Nairobi-City.jpg) #333; */
+    margin-top:1rem
+   }
+   .counter-wrapper>.bg-wrapper {
+    padding-top:1rem;
+    padding-bottom:1rem;
+    background-color:rgba(23,162,184,0.8)
+   }
+   .counter-wrapper .headline {
+    padding-top:.8rem;
+    font-weight:normal;
+    font-size:1.4rem;
+    text-transform:none
+   }
+   .counter-wrapper ul {
+    margin-bottom:0;
+    padding:0
+   }
+   .counter-wrapper li {
+    display:inline-block;
+    padding:.2rem;
+    list-style-type:none;
+    text-transform:uppercase
+   }
+   .counter-wrapper li span {
+    display:block
+   }
+   .counter-wrapper li strong,
+   .counter-wrapper li b {
+    font-size:.9rem
+   }
+   .counter-wrapper p {
+    padding-top:.4rem;
+    font-size:1.1rem
+   }
+   .bg-wrapper>.container {
+    color:#fff;
+    text-align:center
+   }
+   .bg-wrapper .icon svg {
+    width:2.5rem
+   }
+   @media (min-width: 768px) {
+    .counter-wrapper .headline {
+     padding-top:.8rem;
+     font-size:1.8rem
+    }
+    .counter-wrapper li {
+     padding:1.2rem
+    }
+    .counter-wrapper li span {
+     font-size:3.9rem
+    }
+    .counter-wrapper li strong,
+    .counter-wrapper li b {
+     font-size:1.35rem
+    }
+    .counter-wrapper p {
+     font-size:1.25rem
+    }
+    .bg-wrapper .icon svg {
+     width:3.75rem
+    }
+   }
+   @media (min-width: 992px) {
+    .counter-wrapper .headline {
+     padding-top:1rem;
+     font-size:1.95rem
+    }
+    .counter-wrapper li {
+     padding:1.5rem
+    }
+    .counter-wrapper li span {
+     font-size:4.5rem
+    }
+    .counter-wrapper li strong,
+    .counter-wrapper li b {
+     font-size:1.5rem
+    }
+    .counter-wrapper p {
+     font-size:1.5rem
+    }
+    .bg-wrapper .icon svg {
+     width:3.95rem
+    }
+   }

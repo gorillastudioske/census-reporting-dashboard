@@ -1,0 +1,32 @@
+.error-wrapper {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    height:90vh
+   }
+   .error-content {
+    width:100%;
+    max-width:420px;
+    padding:15px;
+    margin:auto;
+    color:#6c757d;
+    font-weight:400
+   }
+   .error-content .icon svg {
+    width:200px;
+    fill:#adb5bd;
+    margin-bottom:2rem
+   }
+   .error-content h1 {
+    font-size:5rem
+   }
+   .error-content .sub-title {
+    color:#ced4da
+   }
+   .error-content p {
+    font-size:.85rem
+   }
+   

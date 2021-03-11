@@ -1,0 +1,16 @@
+.country-search {
+    margin:0 0 10px
+   }
+   .country-search .counties-select {
+    display:none
+   }
+   .country-search .counties-select .btn-outline-secondary {
+    border-color:#ced4da
+   }
+   @media (max-width: 767.98px) {
+    .country-search .counties-select {
+     display:-webkit-box;
+     display:-ms-flexbox;
+     display:flex
+    }
+   }

@@ -1,0 +1,218 @@
+.gender-age .description {
+    text-align:center;
+    padding-top:1rem;
+    color:#6c757d
+   }
+   .genders {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack:distribute;
+    justify-content:space-around;
+    margin-top:1rem;
+    margin-bottom:1rem
+   }
+   .genders svg {
+    width:30px;
+    height:50px
+   }
+   .genders .male,
+   .genders .female {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex
+   }
+   .genders .female svg {
+    fill:#e83e8c
+   }
+   .genders .female .highlight {
+    color:#e83e8c
+   }
+   .genders .male svg {
+    fill:#17a2b8
+   }
+   .genders .male .highlight {
+    color:#17a2b8
+   }
+   .genders .stat {
+    line-height:1
+   }
+   .genders .stat .highlight {
+    font-weight:700;
+    font-size:2.2rem
+   }
+   .genders .stat .figure {
+    font-size:0.85rem
+   }
+   .genders .stat .caption {
+    display:block;
+    color:#adb5bd;
+    text-transform:capitalize
+   }
+   .genders .stat .caption .switch-lg {
+    display:none
+   }
+   .age-groups-chart {
+    padding-left:0.89rem;
+    padding-right:0.89rem
+   }
+   .age-groups-chart .description {
+    border-top:1px dashed #dee2e6
+   }
+   .age-groups-chart .keys {
+    font-size:.7rem;
+    text-transform:uppercase;
+    -webkit-box-pack:space-evenly;
+    -ms-flex-pack:space-evenly;
+    justify-content:space-evenly;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex
+   }
+   .age-groups-chart .keys .key {
+    height:100%;
+    font-weight:500;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex
+   }
+   .age-groups-chart .keys .key .box {
+    margin-right:.5rem;
+    width:20px
+   }
+   .age-groups-chart .keys .key .portion {
+    background-color:#28a745
+   }
+   .age-groups-chart .keys .key .entire {
+    background-image:linear-gradient(45deg, #28a745 25%, transparent 25%, transparent 50%, #28a745 50%, #28a745 75%, transparent 75%, transparent);
+    background-size:5px 5px
+   }
+   .ag-progress-title-container {
+    margin-bottom:0.89rem
+   }
+   .ag-progress-title-container .title {
+    margin-bottom:0;
+    font-size:.8rem;
+    font-weight:500;
+    text-transform:capitalize
+   }
+   .ag-progress-title-container .title .range {
+    color:#adb5bd
+   }
+   .ag-progress-title-container .progress-container {
+    position:relative;
+    -webkit-box-flex:1;
+    -ms-flex:1 1 100%;
+    flex:1 1 100%
+   }
+   .ag-progress-title-container .progress-container .age-range-lg {
+    opacity:0;
+    position:absolute;
+    right:0;
+    padding-right:7px;
+    font-weight:700;
+    pointer-events:none;
+    -webkit-transform:translateX(3.125rem);
+    transform:translateX(3.125rem);
+    -webkit-transition:opacity 80ms cubic-bezier(0.68, -0.55, 0.27, 1.55),-webkit-transform 100ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition:opacity 80ms cubic-bezier(0.68, -0.55, 0.27, 1.55),-webkit-transform 100ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition:opacity 80ms cubic-bezier(0.68, -0.55, 0.27, 1.55),transform 100ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition:opacity 80ms cubic-bezier(0.68, -0.55, 0.27, 1.55),transform 100ms cubic-bezier(0.68, -0.55, 0.27, 1.55),-webkit-transform 100ms cubic-bezier(0.68, -0.55, 0.27, 1.55)
+   }
+   .ag-progress-title-container .progress-container .progress {
+    height:1.5rem;
+    border-radius:0;
+    width:100%;
+    background-image:linear-gradient(45deg, #28a745 25%, transparent 25%, transparent 50%, #28a745 50%, #28a745 75%, transparent 75%, transparent);
+    background-size:5px 5px;
+    -webkit-transition:background-image 100ms ease-in-out;
+    transition:background-image 100ms ease-in-out
+   }
+   @media (min-width: 768px) {
+    .genders svg {
+     width:50px;
+     height:70px
+    }
+    .genders .stat .highlight {
+     font-size:3.4rem
+    }
+    .genders .stat .figure {
+     font-size:1rem
+    }
+   }
+   @media (min-width: 992px) {
+    .metrics>.description {
+     display:none
+    }
+    .genders {
+     -webkit-box-orient:vertical;
+     -webkit-box-direction:normal;
+     -ms-flex-direction:column;
+     flex-direction:column;
+     border-right:1px dashed #dee2e6;
+     padding-right:.8rem;
+     margin:0
+    }
+    .genders svg {
+     width:50px;
+     height:80px
+    }
+    .genders .stat .highlight {
+     font-size:3.7rem
+    }
+    .genders .stat .figure {
+     font-size:1.1rem
+    }
+    .genders .stat .caption .switch-lg {
+     display:inline-block
+    }
+    .age-groups-chart {
+     -webkit-box-flex:2;
+     -ms-flex:2;
+     flex:2;
+     padding-left:0
+    }
+    .age-groups-chart .description {
+     border:none;
+     padding-top:0;
+     text-align:left;
+     padding-left:.8rem
+    }
+    .age-groups-chart .keys {
+     -webkit-box-pack:start;
+     -ms-flex-pack:start;
+     justify-content:flex-start
+    }
+    .age-groups-chart .keys .key {
+     margin-left:.89rem
+    }
+    .ag-progress-title-container {
+     display:-webkit-box;
+     display:-ms-flexbox;
+     display:flex;
+     -ms-flex-wrap:nowrap;
+     flex-wrap:nowrap
+    }
+    .ag-progress-title-container .title {
+     -webkit-box-flex:1;
+     -ms-flex:1 1 100px;
+     flex:1 1 100px;
+     text-align:right
+    }
+    .ag-progress-title-container .title .range {
+     display:none
+    }
+    .ag-progress-title-container .progress-container {
+     margin-left:0.89rem
+    }
+    .ag-progress-title-container .progress-container:hover .age-range-lg {
+     opacity:1;
+     -webkit-transform:translateX(0);
+     transform:translateX(0);
+     cursor:pointer;
+     pointer-events:auto
+    }
+    .ag-progress-title-container .progress-container:hover .progress {
+     background-image:linear-gradient(45deg, rgba(40,167,69,0.4) 25%, transparent 25%, transparent 50%, rgba(40,167,69,0.4) 50%, rgba(40,167,69,0.4) 75%, transparent 75%, transparent)
+    }
+   }
