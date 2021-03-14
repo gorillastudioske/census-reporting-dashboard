@@ -1,30 +1,30 @@
 import React from 'react'
 
 export default function Overview(props) {
-    let location = props.location
+    let { population, region } = props
 
     return (
         <div className="overview-content text-center">
             <h6 className="county">
-                <span className="name">{location.id}</span> : Lodwar
-                </h6>
-            <div className="population">{location.total}</div>
+                <span className="name">{region.name}</span> : {region.capital}
+            </h6>
+            <div className="population">{population.total}</div>
             <div className="stats">
                 <div className="area">
                     <span className="meta">Area:</span>
                     <span>
-                        <strong>{location.area}</strong>
+                        <strong>{population.area}</strong>
                             Km<sup>2</sup>
                     </span>
                 </div>
                 <div className="household">
                     <span className="meta">Households:</span>
-                    <strong>{location.households}</strong>
+                    <strong>{population.households}</strong>
                 </div>
                 <div className="density">
                     <span>
                         <span className="meta">Density:</span>
-                        <strong>{location.density}</strong>
+                        <strong>{population.density}</strong>
                         People/sq. Km
                     </span>
                 </div>
