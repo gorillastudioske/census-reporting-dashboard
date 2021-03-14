@@ -1,23 +1,7 @@
-.indicators.loaded section:nth-child(1) {
-    -webkit-animation:sectionLoaded 300ms ease-in-out forwards;
+.indicators.loaded section {
     animation:sectionLoaded 300ms ease-in-out forwards
    }
-   .indicators.loaded section:nth-child(2) {
-    -webkit-animation:sectionLoaded 600ms ease-in-out forwards;
-    animation:sectionLoaded 600ms ease-in-out forwards
-   }
-   .indicators.loaded section:nth-child(3) {
-    -webkit-animation:sectionLoaded 900ms ease-in-out forwards;
-    animation:sectionLoaded 900ms ease-in-out forwards
-   }
-   .indicators.loaded section:nth-child(4) {
-    -webkit-animation:sectionLoaded 1200ms ease-in-out forwards;
-    animation:sectionLoaded 1200ms ease-in-out forwards
-   }
-   .indicators.loaded section:nth-child(5) {
-    -webkit-animation:sectionLoaded 1500ms ease-in-out forwards;
-    animation:sectionLoaded 1500ms ease-in-out forwards
-   }
+   
    .indicators section {
     margin-bottom:30px;
     background-color:#fff;

@@ -9,14 +9,7 @@
     padding-bottom:1rem;
     background-color:rgba(23,162,184,0.75)
    }
-   .energy-consumption .metric:first-child {
-    border-right:0;
-    border-bottom:1px dashed #fff;
-    padding-bottom:10px
-   }
-   .energy-consumption .metric:last-child {
-    padding-top:10px
-   }
+   
    .energy-consumption .symbol svg {
     height:50px;
     fill:#fff
@@ -55,8 +48,7 @@
    .energy-consumption .metric-links a {
     padding-top:10px;
     padding-bottom:10px;
-    background-color:rgba(255,255,255,0.3);
-    border:1px solid #fff;
+    background-color:rgba(255,255,255,0.3);    
     -webkit-transition:background-color 80ms ease-in-out;
     transition:background-color 80ms ease-in-out
    }
@@ -100,9 +92,7 @@
     .energy-consumption .metrics {
      padding:1rem .3rem
     }
-    .energy-consumption .metric:first-child {
-     border-bottom:0;
-     border-right:1px dashed #fff;
+    .energy-consumption .metric:first-child {     
      padding-bottom:0
     }
     .energy-consumption .metric:last-child {
