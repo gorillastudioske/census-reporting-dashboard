@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import agesReducer from './reducers/agesSlice';
 import populationReducer from "./reducers/populationSlice";
+import metaCountiesReducer from "./reducers/metaCountiesSlice";
 
 export default configureStore({
     reducer: {
         population: populationReducer,
-        ages: agesReducer
+        ages: agesReducer,
+        metaCounties: metaCountiesReducer
     }
 })
