@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function GenderDistribution(props) {
-    let location = props.location
+    let { population } = props
 
     return (
         <div className="metric genders">
@@ -11,7 +11,7 @@ export default function GenderDistribution(props) {
                 </svg></div>
                 <div className="stat">
                     <div className="highlight">48.0%</div>
-                    <div className="figure">{location.female}</div>
+                    <div className="figure">{population.female}</div>
                     <small className="caption">Total female <span className="switch-lg">Population</span></small>
                 </div>
             </div>
@@ -21,7 +21,7 @@ export default function GenderDistribution(props) {
                 </svg></div>
                 <div className="stat">
                     <div className="highlight">52.0%</div>
-                    <div className="figure">{location.male}</div>
+                    <div className="figure">{population.male}</div>
                     <small className="caption">Total male <span className="switch-lg">Population</span></small>
                 </div>
             </div>
