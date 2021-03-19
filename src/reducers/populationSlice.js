@@ -12,12 +12,12 @@ export const fetchCollection = createAsyncThunk(
 export const populationSlice = createSlice({
     name: 'population',
     initialState: {
-        collection: []
+        result: []
     },
     reducers: {},
     extraReducers: {
         [fetchCollection.fulfilled]: (state, action) => {
-            state.collection = action.payload
+            state.result = action.payload
         }
     }
 })
