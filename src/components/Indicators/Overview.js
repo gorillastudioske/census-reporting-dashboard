@@ -8,23 +8,23 @@ export default function Overview(props) {
             <h6 className="county">
                 <span className="name">{region.name}</span> : {region.capital}
             </h6>
-            <div className="population">{population.total}</div>
+            <div className="population">{(population.male + population.female).toLocaleString()}</div>
             <div className="stats">
                 <div className="area">
                     <span className="meta">Area:</span>
                     <span>
-                        <strong>{population.area}</strong>
+                        <strong>population.area</strong>
                             Km<sup>2</sup>
                     </span>
                 </div>
                 <div className="household">
                     <span className="meta">Households:</span>
-                    <strong>{population.households}</strong>
+                    <strong>{population.hhs.toLocaleString()}</strong>
                 </div>
                 <div className="density">
                     <span>
                         <span className="meta">Density:</span>
-                        <strong>{population.density}</strong>
+                        <strong>density</strong>
                         People/sq. Km
                     </span>
                 </div>
