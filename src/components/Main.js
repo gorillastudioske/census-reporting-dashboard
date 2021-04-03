@@ -1,87 +1,127 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import {
+    BrowserRouter as Router,
+    Link,
+    useLocation
+} from "react-router-dom";
 import Breadcrumb from './Breadcrumb'
 import MobileHeader from './MobileHeader'
 import OverviewIndicator from './Indicators/Overview'
 import GenderDistributionIndicator from './Indicators/GenderDistribution'
 import CommunicationAccessIndicator from './Indicators/CommunicationAccess'
-import EnergyAccessIndicator from './Indicators/EnergyAccess'
-import SidebarMap from './Sidebar/Map'
+import CookingFuelIndicator from './Indicators/CookingFuel'
+import AgeGroupsDistributionIndicator from './Indicators/AgeGroupsDistribution'
+import SidebarMap from './Sidebar/LeafletMap'
+import LightSource from './Indicators/LightSource'
 
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
 
-export default class Main extends Component {
-    constructor() {
-        super()
+export default function Main(props) {
+    const query = useQuery()
+    const [region, setRegion] = useState({ id: "KE", name: "Kenya", capital: "Nairobi" })
+    const [population, setPopulation] = useState(props.summary)
 
-        this.state = {
-            counties: [
-                { id: "baringo", name: "Baringo" },
-                { id: "bomet", name: "Bomet" },
-                { id: "bungoma", name: "Bungoma" },
-                { id: "busia", name: "Busia" },
-                { id: "elgeyo-marakwet", name: "Elgeyo-Marakwet" },
-                { id: "embu", name: "Embu" },
-                { id: "garissa", name: "Garissa" },
-                { id: "homa-bay", name: "Homa Bay" },
-                { id: "isiolo", name: "Isiolo" },
-                { id: "kajiado", name: "Kajiado" },
-                { id: "kakamega", name: "Kakamega" },
-                { id: "kericho", name: "Kericho" },
-                { id: "kiambu", name: "Kiambu" },
-                { id: "kilifi", name: "Kilifi" },
-                { id: "kirinyaga", name: "Kirinyaga" },
-                { id: "kisii", name: "Kisii" },
-                { id: "kisumu", name: "Kisumu" },
-                { id: "kitui", name: "Kitui" },
-                { id: "kwale", name: "Kwale" },
-                { id: "laikipia", name: "Laikipia" },
-                { id: "lamu", name: "Lamu" },
-                { id: "machakos", name: "Machakos" },
-                { id: "makueni", name: "Makueni" },
-                { id: "mandera", name: "Mandera" },
-                { id: "marsabit", name: "Marsabit" },
-                { id: "meru", name: "Meru" },
-                { id: "migori", name: "Migori" },
-                { id: "mombasa", name: "Mombasa" },
-                { id: "muranga", name: "Murang'a" },
-                { id: "nairobi", name: "Nairobi" },
-                { id: "nakuru", name: "Nakuru" },
-                { id: "nandi", name: "Nandi" },
-                { id: "narok", name: "Narok" },
-                { id: "nyamira", name: "Nyamira" },
-                { id: "nyandarua", name: "Nyandarua" },
-                { id: "nyeri", name: "Nyeri" },
-                { id: "samburu", name: "Samburu" },
-                { id: "siaya", name: "Siaya" },
-                { id: "taita-taveta", name: "Taita-Taveta" },
-                { id: "tana-river", name: "Tana River" },
-                { id: "tharaka-nithi", name: "Tharaka-Nithi" },
-                { id: "trans-nzoia", name: "Trans-Nzoia" },
-                { id: "turkana", name: "Turkana" },
-                { id: "uasin-gishu", name: "Uasin Gishu" },
-                { id: "vihiga", name: "Vihiga" },
-                { id: "wajir", name: "Wajir" },
-                { id: "west-pokot", name: "West Pokot" }
-            ]
-        }
+    function setDefaults(params) {
+        setRegion({ id: "KE", name: "Kenya", capital: "Nairobi" })
+        setPopulation(props.summary)
     }
-    render() {
-        return (
-            <main>
-                <div className="container">
-                    <MobileHeader counties={this.state.counties} />
-                    <Breadcrumb />
-                    <div className="row">
-                        <div className="col-md-8 indicators loaded">
-                            <OverviewIndicator />
-                            <GenderDistributionIndicator />
-                            <CommunicationAccessIndicator />
-                            <EnergyAccessIndicator />
-                        </div>
 
-                        <SidebarMap />
+    useEffect(() => {
+        if (query.has('region')) {
+            setRegion(props.counties.find(county => county.slug === query.get('region')))
+            setPopulation(props.population.find(county => region ? county.id === region.id : null))
+        }
+    }, [query])
+
+    return population && region ? (
+        <main>
+            <div className="container">
+                <MobileHeader setDefaults={setDefaults} counties={props.counties} />
+                <Breadcrumb setDefaults={setDefaults} region={region} />
+                <div className="row">
+                    <div className="col-md-7 indicators loaded">
+
+                        <section className="census-overview">
+                            <OverviewIndicator population={population} region={region} />
+                            <div className="data-attribution text-center mt-2">
+                                <small className="d-block text-muted">Source: Kenya Population and Housing Census 2009 </small>
+                            </div>
+                        </section>
+
+                        <section className="gender-age">
+                            <div className="metrics">
+                                <h6 className="description">Gender Population Distribution</h6>
+                                <GenderDistributionIndicator population={population} />
+                            </div>
+                            <div className="data-attribution text-center mt-2">
+                                <small className="d-block text-muted">Source: Kenya Population and Housing Census 2009 </small>
+                            </div>
+                        </section>
+
+                        {/* <section className="gender-age">
+                            <div className="metrics">
+                                <h6 className="description">Age Groups Distribution</h6>
+                                <AgeGroupsDistributionIndicator />
+                            </div>
+                            <div className="data-attribution text-center mt-2">
+                                <small className="d-block text-muted">Source: Kenya Population and Housing Census 2009 </small>
+                            </div>
+                        </section> */}
+
+                        {/* <section className="communication-access">
+                            <CommunicationAccessIndicator />
+                            <ul className="metric-links">
+                                <li>
+                                    <a href="#" className="icon active">
+                                        <svg><use xlinkHref="#radio" x="0" y="0"></use></svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="icon">
+                                        <svg><use xlinkHref="#tv" x="0" y="0"></use></svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="icon">
+                                        <svg><use xlinkHref="#mobile" x="0" y="0"></use></svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="icon">
+                                        <svg><use xlinkHref="#landline" x="0" y="0"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="icon">
+                                        <svg><use xlinkHref="#computer" x="0" y="0"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section> */}
+
+                        {/* <section className="energy-consumption text-center">
+                            <div className="metrics">
+                                <CookingFuelIndicator />
+                            </div>
+                        </section> */}
+
+                        {/* <section className="energy-consumption text-center">
+                            <div className="metrics">
+                                <LightSource />
+                            </div>
+                        </section> */}
+                    </div>
+
+                    <div className="col-md-5">
+                        {props.featureCollection && props.featureCollection.features && props.featureCollection.features.length > 0 ? <SidebarMap featureCollection={props.featureCollection} counties={props.counties} region={region} /> : "Map is Loading"}
                     </div>
                 </div>
-            </main>
-        )
-    }
+            </div>
+        </main>
+    ) : "Loading"
 }
